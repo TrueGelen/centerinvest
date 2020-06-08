@@ -1,3 +1,3 @@
-# [cemetery](https://truegelen.github.io/cemetery/dist/)
-[Link to this page](https://truegelen.github.io/cemetery/dist/)
+# [centerinvest](https://truegelen.github.io/centerinvest/dist/)
+[Link to this page](https://truegelen.github.io/centerinvest/dist/)
 --------------------------------
