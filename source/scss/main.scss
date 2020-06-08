@@ -1,0 +1,778 @@
+@import 'smart-grid';
+@import '_normalize';
+@import '_fonts';
+@import 'swiper.min.css';
+// https://vk.com/id133280052 - нет сп, нет фоток с парнем
+//---vars
+$text: #18282b;
+
+///---------common styles ----------------------
+
+html {
+	// font-size: 20px;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+img{
+	margin: 0;
+	padding: 0;
+	width: 100%;	
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	// list-style: none;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+body, div, h1, h2, h3, h4, p, input {
+	margin: 0;
+	padding: 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.container {	
+	// border: 1px solid red;
+	position: relative;
+	@include wrapper();
+
+	// @include to(1920px){
+	// 	max-width: calc(1338.5px + 60px);
+	// }
+
+	// @include sm(max-width, 93%);
+	@include xs(max-width, 100%);
+}
+
+.page{
+	position: relative;
+	// max-width: 1920px;
+}
+
+.asideColumn{
+	position: fixed;
+	z-index: 10;
+	width: 185px;
+	height: 100vh;
+	padding: 20px 0 10px 25px;
+	background-color: #fff;
+	border-right: 1px solid #e5e5e5;
+
+	@include to(1023px){
+		display: none;
+	}
+
+	& > p{
+	}
+}
+
+.pageWrap{
+	padding-left: 187px;
+
+	@include to(1023px){
+		padding-left: 0;
+	}
+}
+
+.uniqueizer11221{
+	position: relative;
+	// max-width: 1920px;
+	width: 100%;
+	
+	.mainTitle{
+		position: relative;
+		display: inline-block;
+		font-family: BebasNeue-Bold, sans-serif;
+		font-size: 4.1vw;
+		line-height: 1.5;
+		text-transform: uppercase;
+		color: $text;
+
+		@include sm(font-size, 5.5vw);
+		@include xs(font-size, 6vw);
+		@include xxs(font-size, 6.8vw);
+
+		&::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: -0%;
+			transform: translate(-500%, -50%);
+			background-color: $text;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+		}
+
+		&::after{
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: -0%;
+			transform: translate(500%, -50%);
+			background-color: $text;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+		}
+	}
+
+	.mainText{
+		font-family: BabesNeueBook, sans-serif;
+		// font-family: CoreSansA45-Regular, sans-serif;
+		font-size: 1.72vw;
+		color: $text;
+		color: black;
+		line-height: 1.25;
+
+		@include sm(font-size, 2.4vw);
+		@include xs(font-size, 2.7vw);
+		@include xxs(font-size, 3.3vw);
+
+		& > span{
+			font-family: CoreSansA65-Bold, sans-serif;
+			// font-weight: 800;
+		}
+	}
+
+	.firstBlock{
+		// border: 1px solid black;
+		position: relative;
+		line-height: 1.15;
+		text-align: center;
+		background-color: #19282b;
+
+		padding: 0 0 0 0;
+
+		&__headerTop{
+			position: relative;
+			width: 100%;
+			background-color: #274247;
+			height: 6.5vw;
+
+			@include sm(height, 9vw);
+
+			@include xs-block{
+				height: 18vw;
+				padding: 1.2vw 0 0 0;
+			}
+		}
+
+		&__headerTopContainer{
+			height: 100%;
+		}
+
+		&__topContent{
+			// border: 1px solid yellow;
+			position: relative;
+			width: 100%;
+			height: 100%;
+
+			display: flex;
+
+			@include xs-block{
+				flex-wrap: wrap;
+			}
+
+			&::before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 1px;
+				height: 100%;
+				background-color: #51666a;
+
+				@include xs(display, none);
+			}
+
+			&::after{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 1px;
+				height: 100%;
+				background-color: #51666a;
+
+				@include xs(display, none);
+			}
+		}
+
+		&__col{
+			// border: 1px solid red;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+
+			@include xs(height, 50%);
+
+			&_type1{
+				width: 25%;
+
+				@include xs(width, 50%);
+			}
+
+			&_type2{
+				width: 50%;
+
+				@include xs(width, 100%);
+			}
+
+			&_nectarin{
+				& > * {
+					// border: 1px solid blue;
+					width: 67%;
+
+					@include to(1023px){
+						width: 73%;
+					}
+
+					@include sm(width, 90%);
+					@include xs(width, 60%);
+				}				
+			}
+
+			&_nikulinskaya{
+				& > * {
+					// border: 1px solid blue;
+					width: 75%;
+
+					@include to(1023px){
+						width: 85%;
+					}
+
+					@include sm(width, 90%);
+					@include xs(width, 67%);
+				}
+			}
+
+			&_p{
+
+				& > * {
+					// border: 1px solid blue;
+					font-family: BebasNeueBook;
+					font-size: 1.25vw;
+					text-transform: uppercase;
+					color: #ece7e4;
+
+					width: 90%;
+
+					@include to(1023px){
+						font-size: 1.8vw;
+						width: 95%;
+					}
+					
+					@include sm-block{
+						font-size: 2.5vw;
+						width: 98%;
+					}
+
+					@include xs-block{
+						width: 100%;
+						font-size: 3.2vw;
+					}
+				}				
+			}
+
+			&_border{
+				// @include xs(display, none);
+				&::before{
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 1px;
+					height: 100%;
+					background-color: #51666a;
+				}
+	
+				&::after{
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 1px;
+					height: 100%;
+					background-color: #51666a;
+
+					@include xs(display, none);
+				}
+			}
+		}
+
+		&__bottom{
+			position: relative;
+			text-align: left;
+			color: #f2f2f2;
+
+			display: flex;
+			justify-content: space-between;
+
+			padding: 4.3vw 0 3.45vw 0;	
+			
+			@include to(1023px){
+				padding: 4.3vw 0 8.45vw 0;
+			}
+
+			@include sm-block{
+				padding: 11vw 0 11vw 0;
+				overflow: hidden;
+			}
+
+			@include xs-block{
+				padding: 13vw 0 13vw 0;
+			}
+
+			& > picture{
+				// border: 1px solid red;
+				position: absolute;
+				top: -33%;
+				right: -8.5%;
+				width: 53%;
+
+				@include to(1023px){
+					top: -45%;
+					width: 58%;
+				}
+
+				@include sm-block{
+					width: 70%;
+					right: -19%;
+					top: -33%;
+				}
+
+				@include xs-block{
+					width: 70%;
+					right: -19%;
+					top: -37%;
+				}
+
+				@include xxs-block{
+					width: 70%;
+					right: -19%;
+					top: -33.5%;
+				}
+			}
+		}
+
+		&__bottomText{
+			& > h1{
+				font-family: BebasNeue-Bold, sans-serif;
+				font-size: 4.2vw;
+				line-height: 1.2;
+
+				@include sm(font-size, 5.5vw);
+				@include xs(font-size, 6vw);
+				@include xxs(font-size, 6.8vw);
+			}
+
+			& > p{
+				font-family: CoreSansA45-Regular, sans-serif;
+				font-size: 2.25vw;
+
+				@include sm(font-size, 2.4vw);
+				@include xs(font-size, 2.7vw);
+				@include xxs(font-size, 3.3vw);
+			}
+		}
+	}
+
+	.secondSection{
+		// border: 1px solid black;
+		position: relative;
+		line-height: 1.15;
+		background: url(../img/bg.png);
+
+		padding: .6vw 0 0vw 0;
+
+		.task{
+			padding: 2vw 0 0 0;
+		}
+
+		.targetAudience{
+			padding: 2vw 0 0 0;
+
+			
+
+			&__text{
+				max-width: 90%;
+
+				@include sm(max-width, none);
+			}
+
+			&__imgBlock{
+				// border: 1px solid red;
+				position: relative;
+				width: 100%;
+				height: 22vw;
+
+				margin-top: 1.7vw;
+				margin-bottom: 1.7vw;
+
+				@include to(1023px){
+					height: 26vw;
+				}
+
+				@include sm-block{
+					height: 27vw;
+					margin-top: 2vw;
+					margin-bottom: 2vw;
+				};
+
+				@include xs-block{
+					height: 28vw;
+					margin-top: 2.4vw;
+					margin-bottom: 2.4vw;
+				}
+
+				@include xxs-block{
+					height: 37vw;
+					margin-top: 2.9vw;
+					margin-bottom: 2.9vw;
+				}
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+
+			&__dottedLine{
+				position: absolute;
+				width: 45%;
+
+				&_right{
+					top: 33%;
+					right: 0;
+				}
+
+				&_left{
+					bottom: 27%;
+					left: 0;
+				}
+			}
+
+			&__img{
+				// border: 1px solid blue;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-radius: 45px;
+				width: 82%;
+
+				@include xxs(width, 95%);
+
+				&_1{
+					transform: translate(-13%, -27%);
+				}
+
+				&_2{
+					transform: translate(-13%, -22%);
+				}
+
+				&_3{
+					transform: translate(-13%, -24.5%);
+				}
+			}
+		}
+	}
+
+	.decision{
+		position: relative;
+		line-height: 1.15;
+		background: url(../img/bg.png);
+
+		padding: 1.1vw 0 0vw 0;
+		
+		@include xs(padding, 4vw 0 0 0);
+
+		&__buildings{
+			width: 100%;
+		}
+
+		&__container{
+			// border: 1px solid red;
+			max-width: calc(85% + 60px);
+
+			// padding: 4.5vw 0 0 0;
+			padding-top: 4.5vw;
+
+			@include xs(max-width, 100%);
+		}
+
+		&__textBlock{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			margin: 3vw 0 0 0;
+
+			&:first-child{
+				margin-top: 0;
+			}
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			& > p{
+				max-width: 85%;
+			}
+		}
+
+		&__svgBlock{
+			// border: 1px solid blue;
+			position: relative;
+			background-color: #e4e4e6;
+			border-radius: 50%;
+			width: 7vw;
+			height: 7vw;
+
+			@include sm-block{
+				width: 10vw;
+				height: 10vw;
+			}
+
+			@include xs-block{
+				width: 13vw;
+				height: 13vw;
+			}
+		}
+
+		&__svg{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 60%;
+		}
+	}
+
+	.cardSection{
+		position: relative;
+		line-height: 1.15;
+		background: url(../img/bg.png);
+
+		padding: 1.5vw;
+
+		z-index: 1;
+
+		@include to(1023px){
+			padding: 4vw 0 1.5vw 0;
+		}
+
+		&__cards{
+			// border: 1px solid blue;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: wrap;
+
+			margin-bottom: -1vw;
+		}
+
+		&__card{
+			margin: 1vw 1vw;
+			width: calc(25.5% - 1vw);
+
+			@include sm-block{
+				margin: 1.5vw 1.5vw;
+				width: calc(33% - 3vw);
+			}
+		}
+	}
+
+	.results{
+		position: relative;
+		line-height: 1.15;
+		background: url(../img/bg.png);
+
+		padding: 1.6vw 0 0 0;
+
+		&__container{
+			@include to(1023px){
+				max-width: 87%;
+			}
+
+			@include xs(max-width, 100%);
+		}
+
+		&__kpi{
+			border: 3px dotted #274247;
+			display: flex;
+			align-items: center;
+			
+			// width: 53%;
+			width: 37vw;
+			padding: .3vw;
+			margin-bottom: 1vw;
+
+			font-family: CoreSansA65-Bold, sans-serif;
+			color: #274247;
+
+			@include to(1023px){
+				width: 45vw;
+			}
+
+			@include sm-block{
+				margin-bottom: 1.5vw;
+				width: 55.5vw;
+			}
+
+			@include xs(width, 65.5vw);
+			@include xs(width, 73vw);
+
+			& > p{
+				font-size: 1.6vw;
+				margin-left: 1.2vw;
+
+				@include to(1023px){
+					font-size: 2vw;
+				}
+
+				@include sm(font-size, 2.5vw);
+				@include xs(font-size, 3vw);
+				@include xxs(font-size, 3.3vw);
+			}
+
+			& > div{
+				display: flex;
+				align-items: center;
+
+				& > p {
+					text-transform: uppercase;
+					font-size: 1.15vw;
+
+					@include to(1023px){
+						font-size: 1.5vw;
+					}
+
+					@include sm(font-size, 1.8vw);
+					@include xs(font-size, 2.2vw);
+					@include xxs(font-size, 2.5vw);
+
+					&:first-child{
+						font-size: 2.9vw;
+
+						@include to(1023px){
+							font-size: 4vw;
+						}
+
+						@include sm(font-size, 4.7vw);
+						@include xs(font-size, 5.2vw);
+						@include xxs(font-size, 6vw);
+					}
+				}
+			}
+		}
+
+		&__graph{
+			width: 100%;
+			margin-top: 2vw;
+		}
+	}
+
+	.team{
+    position: relative;
+		line-height: 1.15;
+		background: url(../img/bg.png);
+
+		padding: 2.3vw 0 0 0;
+
+		&__container{
+			max-width: 87%;
+
+			@include xs(max-width, 100%);
+		}
+
+    &__members{
+			// border: 1px solid #fff;
+      display: flex;
+      // flex-wrap: wrap;
+			justify-content: space-between;
+
+			@include sm(flex-wrap, wrap);
+		}
+  }
+
+  .member{
+		// border: 1px solid red;
+		position: relative;
+		font-size: 1.6vw;
+		line-height: 1.15;
+
+		width: 24%;
+		margin: 1vw 0;
+
+		text-align: center;
+
+		@include to(1550px){
+			font-size: 1.4vw;
+		}
+
+		@include to(1023px){
+			font-size: 1.6vw;
+		}
+
+		@include sm-block{
+			width: 45%;
+			font-size: 2.5vw;
+		}
+
+		@include xs(font-size, 3vw);
+		
+		&__photo{
+			width: 60%;
+
+			@include to(1023px){
+				width: 70%;
+			}
+
+			@include sm(width, 60%);
+			@include xs(width, 65%);
+			@include xxs(width, 70%);
+		}
+
+		&__name{
+			font-family: CoreSansA65-Bold, sans-serif;
+			// font-size: 1.6vw;
+
+			margin-top: 1vw;
+		}
+
+		&__position{
+			font-family: coreSansA45-Regular;
+			// font-size: 1.6vw;
+		}
+	}
+}

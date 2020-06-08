@@ -1,0 +1,19 @@
+@mixin font-face($font-family, $path, $weight: normal, $style: normal)
+	{
+		@font-face {
+			font-family: $font-family;
+			font-weight: $weight;
+			font-style: $style;
+			src: url('#{$path}.woff2') format('woff2'), url('#{$path}.ttf') format('truetype');
+		}
+	}
+
+	//для nectarin.ru/bitrix оставляем путь таким же
+@include font-face('BebasNeue-Bold', '../fonts/BebasNeue/BebasNeue-Bold/BebasNeue-Bold', 600);
+@include font-face('BebasNeueBook', '../fonts/BebasNeue/BebasNeueBook/BebasNeueBook', 400);
+@include font-face('CoreSansA45-Regular', '../fonts/CoreSansA45/CoreSansA45-Regular/CoreSansA45-Regular', 400);
+@include font-face('CoreSansA65-Bold', '../fonts/CoreSansA65/CoreSansA65-Bold/CoreSansA65-Bold', 600);
+
+//coreSansA45Regular
+//coreSansA65Bold
+//BebasNeueBook BebasNeueBold\
