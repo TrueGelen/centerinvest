@@ -104,11 +104,15 @@ body, div, h1, h2, h3, h4, p, input {
 		position: relative;
 		display: inline-block;
 		font-family: BebasNeue-Bold, sans-serif;
-		font-size: 4.1vw;
+		// font-size: 4.1vw;
+		font-size: 3.4vw;
 		line-height: 1.5;
 		text-transform: uppercase;
 		color: $text;
 
+		@include to(1023px){
+			font-size: 4.1vw;
+		}
 		@include sm(font-size, 5.5vw);
 		@include xs(font-size, 6vw);
 		@include xxs(font-size, 6.8vw);
@@ -141,13 +145,17 @@ body, div, h1, h2, h3, h4, p, input {
 	}
 
 	.mainText{
-		font-family: BabesNeueBook, sans-serif;
+		font-family: CoreSansA45-Regular, sans-serif;
 		// font-family: CoreSansA45-Regular, sans-serif;
-		font-size: 1.72vw;
+		// font-size: 1.72vw;
+		font-size: 1.4vw;
 		color: $text;
 		color: black;
 		line-height: 1.25;
 
+		@include to(1023px){
+			font-size: 1.72vw;
+		}
 		@include sm(font-size, 2.4vw);
 		@include xs(font-size, 2.7vw);
 		@include xxs(font-size, 3.3vw);
@@ -390,6 +398,8 @@ body, div, h1, h2, h3, h4, p, input {
 				font-family: BebasNeue-Bold, sans-serif;
 				font-size: 4.2vw;
 				line-height: 1.2;
+				margin: 0;
+				padding: 0;
 
 				@include sm(font-size, 5.5vw);
 				@include xs(font-size, 6vw);
@@ -416,7 +426,7 @@ body, div, h1, h2, h3, h4, p, input {
 		padding: .6vw 0 0vw 0;
 
 		.task{
-			padding: 2vw 0 0 0;
+			padding: 3vw 0 0 0;
 		}
 
 		.targetAudience{
@@ -434,31 +444,40 @@ body, div, h1, h2, h3, h4, p, input {
 				// border: 1px solid red;
 				position: relative;
 				width: 100%;
-				height: 22vw;
+				// height: 22vw;
+				height: 19vw;
 
 				margin-top: 1.7vw;
 				margin-bottom: 1.7vw;
 
+				@include to(1200px){
+					height: 18.1vw;
+				}
+
 				@include to(1023px){
-					height: 26vw;
+					// height: 26vw;
+					height: 21.5vw;
 				}
 
 				@include sm-block{
-					height: 27vw;
+					// height: 27vw;
 					margin-top: 2vw;
 					margin-bottom: 2vw;
+					height: 22vw;
 				};
 
 				@include xs-block{
-					height: 28vw;
+					// height: 28vw;
 					margin-top: 2.4vw;
 					margin-bottom: 2.4vw;
+					height: 25.5vw;
 				}
 
 				@include xxs-block{
-					height: 37vw;
+					// height: 37vw;
 					margin-top: 2.9vw;
 					margin-bottom: 2.9vw;
+					height: 35vw;
 				}
 
 				&:last-child{
@@ -468,7 +487,8 @@ body, div, h1, h2, h3, h4, p, input {
 
 			&__dottedLine{
 				position: absolute;
-				width: 45%;
+				// width: 45%;
+				width: 50%;
 
 				&_right{
 					top: 33%;
@@ -487,7 +507,8 @@ body, div, h1, h2, h3, h4, p, input {
 				top: 0;
 				left: 0;
 				border-radius: 45px;
-				width: 82%;
+				// width: 82%;
+				width: 72%;
 
 				@include xxs(width, 95%);
 
@@ -534,7 +555,11 @@ body, div, h1, h2, h3, h4, p, input {
 			justify-content: space-between;
 			align-items: center;
 
-			margin: 3vw 0 0 0;
+			//old
+			// margin: 3vw 0 0 0;
+
+			//new
+			margin: 1.7vw 0 0 0;
 
 			&:first-child{
 				margin-top: 0;
@@ -554,8 +579,8 @@ body, div, h1, h2, h3, h4, p, input {
 			position: relative;
 			background-color: #e4e4e6;
 			border-radius: 50%;
-			width: 7vw;
-			height: 7vw;
+			width: 6vw;
+			height: 6vw;
 
 			@include sm-block{
 				width: 10vw;
@@ -592,13 +617,25 @@ body, div, h1, h2, h3, h4, p, input {
 
 		&__cards{
 			// border: 1px solid blue;
-			width: 100%;
+
+			//old
+			// width: 100%;
+			// margin-bottom: -1vw;
+			//----
+			
+			//new
+			width: 85%;
+			margin: 0 auto -1vw auto;
+
+			@include to(1440px){
+				width: 100%;
+			}
+			//----
+
 			display: flex;
 			justify-content: center;
 			align-items: flex-start;
 			flex-wrap: wrap;
-
-			margin-bottom: -1vw;
 		}
 
 		&__card{
@@ -696,9 +733,21 @@ body, div, h1, h2, h3, h4, p, input {
 			}
 		}
 
+		&__list{
+			
+		}
+
 		&__graph{
-			width: 100%;
-			margin-top: 2vw;
+			// width: 100%;
+			// margin-top: 2vw;
+
+			display: block;
+			width: 80%;
+			margin: 2vw auto 0 auto;
+
+			@include to(1440px){
+				width: 100%;
+			}
 		}
 	}
 
@@ -728,7 +777,7 @@ body, div, h1, h2, h3, h4, p, input {
   .member{
 		// border: 1px solid red;
 		position: relative;
-		font-size: 1.6vw;
+		font-size: 1.2vw;
 		line-height: 1.15;
 
 		width: 24%;
@@ -737,7 +786,7 @@ body, div, h1, h2, h3, h4, p, input {
 		text-align: center;
 
 		@include to(1550px){
-			font-size: 1.4vw;
+			// font-size: 1.4vw;
 		}
 
 		@include to(1023px){
@@ -752,7 +801,7 @@ body, div, h1, h2, h3, h4, p, input {
 		@include xs(font-size, 3vw);
 		
 		&__photo{
-			width: 60%;
+			width: 50%;
 
 			@include to(1023px){
 				width: 70%;
@@ -776,3 +825,5 @@ body, div, h1, h2, h3, h4, p, input {
 		}
 	}
 }
+
+//на гите лежит старый вариант, только маргджин обнулить для h1 и поменять шрифт в mainText

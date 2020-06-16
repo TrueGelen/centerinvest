@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
 	})
 
 	const cardsRellax = new Rellax('.rellaxCards', {
-		speed: (window.innerWidth > 560) ? 3 : 1,
+		speed: (window.innerWidth > 560) ? 4 : 2,
 		// speed: 10,
 		center: true,
 		round: true,
